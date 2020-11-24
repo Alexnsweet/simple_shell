@@ -16,8 +16,8 @@ extern char **environ;
 int print_string(char *str);
 int _strlen(char *s);
 char **tokenizer(char *str, char *delim);
-int _strncmp(char *s1, char *s2, int n);
+int _strncmp(char *s1, char *s2, size_t n);
 char *path_parser(char *envvar);
-
+char *_strcat(char *dest, char *src);
 
 #endif /* Header_shell_H */
