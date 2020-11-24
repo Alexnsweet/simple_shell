@@ -20,5 +20,5 @@ int _strncmp(char *s1, char *s2, size_t n);
 char *path_parser(char *envvar);
 char *_strcat(char *dest, char *src);
 char *catcmd(char **paths, char **tokens);
-
+char *_strcpy(char *dest, char *src);
 #endif /* Header_shell_H */
