@@ -57,14 +57,15 @@ char *_strcat(char *dest, char *src)
  */
 char *concat(char *str, char *str2)
 {
-	char *cat, *cat1;
+	char *cat;
 	int size;
 
-	size = (_strlen(str) + _strlen(str2) + 1);
+	size = (_strlen(str) + _strlen(str2) + 2);
 
 	cat = malloc(sizeof(char) * size);
-	cat1 = _strcpy(cat, str);
-	cat = _strcat(cat1, str2);
+	cat = _strcpy(cat, str);
+	cat = _strcat(cat, "/");
+	cat = _strcat(cat, str2);
 
 	return (cat);
 }
