@@ -17,10 +17,10 @@ char *path_parser(char *envvar)
 	{
 		j = _strncmp(environ[i], envvar, k);
 
-		printf("[%d] J is %d \n", i, j);
+		printf("I is [%d] J is [%d] K is [%d] \n", i, j, k);
 
 		if (j == 0)
-		{	ptr = &environ[i][k]; /* return string after =  */
+		{	ptr = &environ[i][5]; /* return string after =  */
 			return (ptr);
 		}
 	}
