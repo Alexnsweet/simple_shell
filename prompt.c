@@ -4,7 +4,6 @@ int main(int ac, char **av, char **env)
 {
 	char *buffer = NULL;
 	char *path;
-	char *path2;
 	char **tokens;
 	char **paths;
 	size_t buffSize = 0;
@@ -16,8 +15,7 @@ int main(int ac, char **av, char **env)
 	else if (isatty(STDIN_FILENO) != 1)
 	{	write (STDOUT_FILENO, "$ ", 2);	}
 
-	path = environ[8];
-	path2 = _strdup(*path);
+	path = strdup(environ[8]);
 	
 	
 
@@ -28,8 +26,16 @@ int main(int ac, char **av, char **env)
 		print_string("\n");
 	}
 */
-	printf("%s\n", path2);
-	free(path2);
+	paths = tokenizer(path, ":");
+
+	for (i = 0; paths[i]; i++)
+	{
+		print_string(paths[i]);
+		print_string("\n");
+	}
+
+
+	free(path);
 	gl = getline(&buffer, &buffSize, stdin);
 	if (gl == -1)
 	{	print_string("could not read line");
