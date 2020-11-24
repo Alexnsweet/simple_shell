@@ -19,5 +19,6 @@ char **tokenizer(char *str, char *delim);
 int _strncmp(char *s1, char *s2, size_t n);
 char *path_parser(char *envvar);
 char *_strcat(char *dest, char *src);
+char *catcmd(char **paths, char **tokens);
 
 #endif /* Header_shell_H */
