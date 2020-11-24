@@ -11,11 +11,11 @@ char *path_parser(char *envvar)
 	int i, j, k;
 	char *ptr = NULL, *ptr2 = NULL;
 
-	k = _strlen(*envvar);
+	k = _strlen(envvar);
 
-	for (i = 0, j = 0, k = 0; environ[i]; i++)
+	for (i = 0, j = 0, k; environ[i]; i++)
 	{
-		j = _strncmp(environ[i], *envvar, k);
+		j = _strncmp(environ[i], envvar, k);
 
 		if (j == 0)
 		{	ptr = &environ[i][k]; /* return string after =  */
