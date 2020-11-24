@@ -9,7 +9,7 @@
 char *path_parser(char *envvar)
 {
 	int i, j, k;
-	char *ptr = NULL, *ptr2 NULL;
+	char *ptr = NULL, *ptr2 = NULL;
 
 	k = _strlen(*envvar);
 
