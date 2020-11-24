@@ -9,16 +9,18 @@
 char *path_parser(char *envvar)
 {
 	int i, j, k;
-	char *ptr = NULL, *ptr2 = NULL;
+	char *ptr = NULL;
 
 	k = _strlen(envvar);
 
-	for (i = 0, j = 0, k; environ[i]; i++)
+	for (i = 0, j = 0, k = 0; environ[i]; i++)
 	{
 		j = _strncmp(environ[i], envvar, k);
 
+		printf("[%d] J is %d", i, j);
+
 		if (j == 0)
-		{	ptr = &environ[i][k]; /* return string after =  */
+		{	ptr = &environ[i][5]; /* return string after =  */
 			return (ptr);
 		}
 	}
