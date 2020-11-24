@@ -48,12 +48,14 @@ printf("%s\n", teststr3);
 			print_string(tokens[i]);
 			print_string("\n");
 		}
-/*
-	cmd = catcmd(paths, tokens);
+
+for (i = 0; paths[i]; i++)
+{
+	cmd = concat(paths[i], tokens[0]);
 	
 	printf("%s\n", cmd);
-
-	execve(cmd, tokens);
+}
+/*	execve(cmd, tokens);
 */
 		free(paths);
 		free(tokens);	
