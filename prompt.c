@@ -15,17 +15,12 @@ int main(int ac, char **av, char **env)
 	else if (isatty(STDIN_FILENO) != 1)
 	{	write (STDOUT_FILENO, "$ ", 2);	}
 
-	path = strdup(environ[8]);
-	
-	
 
-/*	paths = tokenizer(path, "=:");
-	for (i = 0; paths[i]; i++)
-	{
-		print_string(paths[i]);
-		print_string("\n");
-	}
-*/
+	path = path_parser("PATH=");
+	
+	printf("%s\n", path);
+
+/*
 	paths = tokenizer(path, ":");
 
 	for (i = 0; paths[i]; i++)
@@ -33,9 +28,8 @@ int main(int ac, char **av, char **env)
 		print_string(paths[i]);
 		print_string("\n");
 	}
+*/
 
-
-	free(path);
 	gl = getline(&buffer, &buffSize, stdin);
 	if (gl == -1)
 	{	print_string("could not read line");
@@ -48,7 +42,6 @@ int main(int ac, char **av, char **env)
 			print_string(tokens[i]);
 			print_string("\n");
 		}
-		free(path);
 
 		free(tokens);	
 		free(buffer);
