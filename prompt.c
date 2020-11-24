@@ -38,7 +38,7 @@ int main(int ac, char **av, char **env)
 			print_string(tokens[i]);
 			print_string("\n");
 		}
-
+		free(paths);
 		free(tokens);	
 		free(buffer);
 	}
