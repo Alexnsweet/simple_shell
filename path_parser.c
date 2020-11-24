@@ -12,8 +12,8 @@ char *path_parser(char *envvar)
 	char *ptr = NULL;
 
 	k = _strlen(envvar);
-
-	for (i = 0, j = 0, k = 0; environ[i]; i++)
+	k = 0;
+	for (i = 0, j = 0; environ[i]; i++)
 	{
 		j = _strncmp(environ[i], envvar, k);
 
