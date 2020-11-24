@@ -18,9 +18,6 @@ int main(int ac, char **av, char **env)
 
 	path = path_parser("PATH=");
 	
-	printf("%s\n", path);
-
-/*
 	paths = tokenizer(path, ":");
 
 	for (i = 0; paths[i]; i++)
@@ -28,7 +25,6 @@ int main(int ac, char **av, char **env)
 		print_string(paths[i]);
 		print_string("\n");
 	}
-*/
 
 	gl = getline(&buffer, &buffSize, stdin);
 	if (gl == -1)
