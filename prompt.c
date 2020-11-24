@@ -1,25 +1,52 @@
 #include "Header_shell.h"
 
-int main(int ac, char **av)
+int main(int ac, char **av, char **env)
 {
-	char prompt[] = "$ ";
-	char *buffer;
+	char *buffer = NULL;
+	char *path;
+	char *path2;
+	char **tokens;
+	char **paths;
 	size_t buffSize = 0;
-	int gl;
-	(void)ac;
+	int gl, i;
+	(void) ac;
 
-	av[0] = prompt;
-	print_string(prompt);
+	if (isatty(STDIN_FILENO))
+	{	write (STDOUT_FILENO, "($) ", 4);	}
+	else if (isatty(STDIN_FILENO) != 1)
+	{	write (STDOUT_FILENO, "$ ", 2);	}
 
+	path = environ[8];
+	path2 = _strdup(*path);
+	
+	
+
+/*	paths = tokenizer(path, "=:");
+	for (i = 0; paths[i]; i++)
+	{
+		print_string(paths[i]);
+		print_string("\n");
+	}
+*/
+	printf("%s\n", path2);
+	free(path2);
 	gl = getline(&buffer, &buffSize, stdin);
 	if (gl == -1)
-	{	print_err("could not read line");
-		return (-1);
+	{	print_string("could not read line");
 	}
 	else
 	{
-		print_string(buffer);
+		tokens = tokenizer(buffer, " ");
+		for (i = 0; tokens[i]; i++)
+		{
+			print_string(tokens[i]);
+			print_string("\n");
+		}
+		free(path);
+
+		free(tokens);	
 		free(buffer);
-		return (0);
 	}
+
+	return (0);
 }
