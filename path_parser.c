@@ -12,15 +12,15 @@ char *path_parser(char *envvar)
 	char *ptr = NULL;
 
 	k = _strlen(envvar);
-	k = 0;
+
 	for (i = 0, j = 0; environ[i]; i++)
 	{
-		j = _strncmp(environ[i], envvar, k);
+		j = strncmp(environ[i], envvar, k);
 
-		printf("I is [%d] J is [%d] K is [%d] \n", i, j, k);
+	/*	printf("I is [%d] J is [%d] K is [%d] \n", i, j, k); */
 
 		if (j == 0)
-		{	ptr = &environ[i][5]; /* return string after =  */
+		{	ptr = &environ[i][k]; /* return string after =  */
 			return (ptr);
 		}
 	}
