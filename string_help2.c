@@ -60,8 +60,7 @@ char *concat(char *str, char *str2)
 	char *cat, *cat1;
 	int size;
 
-	size = (_strlen(str) + _strlen(str2));
-	size--;
+	size = (_strlen(str) + _strlen(str2) + 1);
 
 	cat = malloc(sizeof(char) * size);
 	cat1 = _strcpy(cat, str);
