@@ -21,11 +21,11 @@ teststr1 = "Hello world, ";
 teststr2 = "it's nice to see you.";
 
 printf("%s\n", teststr1);
-/*
-*teststr3 = concat(teststr1, teststr2);
+
+teststr3 = concat(teststr1, teststr2);
 
 printf("%s\n", teststr3);
-*/
+
 	path = path_parser("PATH=");
 	
 	paths = tokenizer(path, ":");

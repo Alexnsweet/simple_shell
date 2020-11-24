@@ -57,13 +57,39 @@ char *_strcat(char *dest, char *src)
  */
 char *concat(char *str, char *str2)
 {
-	char *cat = NULL;
+	char *cat, *cat1;
 	int size;
 
 	size = (_strlen(str) + _strlen(str2));
 	size--;
+
 	cat = malloc(sizeof(char) * size);
-	cat = _strcat(str, str2);
+	cat1 = _strcpy(cat, str);
+	cat = _strcat(cat1, str2);
 
 	return (cat);
+}
+
+/**
+ * _strcpy - function that copies string from src to dest
+ * @dest: destination
+ * @src: source
+ *
+ * Return: char array (string)
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int i, len = 0;
+
+while (src[len] != '\0')
+{
+	len++;
+}
+
+for (i = 0; i <= len; i++)
+{
+	dest[i] = src[i];
+}
+
+	return (dest);
 }
