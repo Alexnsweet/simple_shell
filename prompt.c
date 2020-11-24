@@ -10,6 +10,7 @@ int main(int ac, char **av, char **env)
 	int gl, i;
 	(void) ac;
 	char *teststr1, *teststr2, *teststr3;
+	pid_t child;
 
 	if (isatty(STDIN_FILENO))
 	{	write (STDOUT_FILENO, "($) ", 4);	}
@@ -59,6 +60,8 @@ printf("%s\n", teststr3);
 		}
 
 
+
+
 for (i = 0; paths[i]; i++)
 {
 	cmd = concat(paths[i], tokens[0]);
@@ -67,6 +70,8 @@ for (i = 0; paths[i]; i++)
 	printf("cmd: %s\n", cmd);
 
 	execve(cmd, tokens, environ);
+
+	free(cmd);
 }
 
 		free(paths);
