@@ -1,4 +1,4 @@
-#include "Header_shell.c"
+#include "Header_shell.h"
 /**
  * _strncmp - compares two strings up to n chars
  * @s1: first string to compare
