@@ -7,16 +7,19 @@ int main(int ac, char **av, char **env)
 	char **tokens;
 	char **paths;
 	size_t buffSize = 0;
-	int gl, i, status;
+	int gl, i, status, tty;
 	(void) ac;
 	char *teststr1, *teststr2, *teststr3;
 	pid_t child;
 
+	tty = _ttyprompt();
 
+/*
 	if (isatty(STDIN_FILENO))
 	{	write (STDOUT_FILENO, "($) ", 4);	}
 	else if (isatty(STDIN_FILENO) != 1)
 	{	write (STDOUT_FILENO, "$ ", 2);	}
+*/
 
 /* test _strcat and concat
 teststr1 = "Hello world, ";
@@ -79,7 +82,7 @@ if (child == 0)
 		free(cmd);
 	}
 
-		print_string("Command not found, buddy");
+		print_string("Command not found, buddy. Try again\n");
 
 		free(paths);
 		free(tokens);
