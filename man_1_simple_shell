@@ -18,37 +18,39 @@ Using
 .I GCC 4.8.4.
 .SH OPTIONS
 
-.B cd - change directory
+.B cd 
+- change directory
 
-.P
-.B env - print evironment
 
-.P
-.B exit - exit the shell
+.B env 
+- print evironment
+
+.B exit 
+- exit the shell
 
 .SH FILES
 
-.P
-.B helper1 - miscellaneous helper functions supporting program
+.B helper1 
+- miscellaneous helper functions supporting program
 
-.P
-.B Header_shell - header file
+.B Header_shell 
+- header file
 
-.P
-.B string_help2 - contains function to parse tokens and other character array manipulation
+.B string_help2 
+- contains function to parse tokens and other character array manipulation
 
-.P
-.B string_help - contains functions to manipulate character arrays
+.B string_help 
+- contains functions to manipulate character arrays
 
-.P
-.B prompt - main function to start shell
+.B prompt 
+- main function to start shell
 
-.P
-.B path_parser - contains function to parse the path values of a given environment variable
+.B path_parser 
+- contains function to parse the path values of a given environment variable
 
 .SH EXAMPLE
-alexnsweet@rocketblaster.com:~/simple_shell$ ./hsh
-.P ($)
-.P ($)pwd
-.P /home/vagrant/simple_shell
-.P ($)exit
+ alexnsweet@rocketblaster.com:~/simple_shell$ ./hsh
+ ($)
+ ($)pwd
+ /home/vagrant/simple_shell
+ ($)exit
