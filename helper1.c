@@ -28,7 +28,7 @@ int _ttyprompt(void)
 		tty = 1;
 	}
 	else if (isatty(STDIN_FILENO) != 1)
-	{	write (STDOUT_FILENO, "$ ", 2);
+	{
 		tty = 0;
 	}
 
