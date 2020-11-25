@@ -5,7 +5,7 @@
 .SH SYNOPSIS
 .b ./hsh
 [
-.I command
+.I command_string
 ]
 [
 .I options
@@ -28,25 +28,23 @@ Using
 
 .SH FILES
 
-.B builtins - check to see if command is a built-in
-
 .P
-.B placeholder - placeholder
+.B helper1 - miscellaneous helper functions supporting program
 
 .P
 .B Header_shell - header file
 
 .P
-.B string_help2 - contains function to parse tokens and a function to free memory
+.B string_help2 - contains function to parse tokens and other character array manipulation
 
 .P
-.B path - functions to handle the PATH
+.B string_help - contains functions to manipulate character arrays
 
 .P
 .B prompt - main function to start shell
 
 .P
-.B string_help - string manipulation tools
+.B path_parser - contains function to parse the path values of a given environment variable
 
 .SH EXAMPLE
 alexnsweet@rocketblaster.com:~/simple_shell$ ./hsh
