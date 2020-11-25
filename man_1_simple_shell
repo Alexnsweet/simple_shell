@@ -1,4 +1,4 @@
-.TH HSH 1 "2020-11-23" "Linux" "simple shell man page"
+.TH HSH 1 "2020-11-26" "Linux" "simple shell man page"
 .SH NAME
 .B hsh
 - simple shell command interpreter
@@ -37,10 +37,7 @@ Using
 .B Header_shell - header file
 
 .P
-.B _printf - simple function to mimic features of printf
-
-.P
-.B  - contains function to parse tokens and a function to free memory
+.B string_help2 - contains function to parse tokens and a function to free memory
 
 .P
 .B path - functions to handle the PATH
@@ -54,6 +51,6 @@ Using
 .SH EXAMPLE
 alexnsweet@rocketblaster.com:~/simple_shell$ ./hsh
 .P ($)
-.P ($)ls
-.P Header_shell.h helper1.c string_help.c prompt.c  parse.c README.md  simpshell.c
+.P ($)pwd
+.P /home/vagrant/simple_shell
 .P ($)exit
