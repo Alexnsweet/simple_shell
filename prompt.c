@@ -10,7 +10,6 @@ int main(void)
 	size_t buffSize = 0;
 	int gl, i, status, tty;
 
-	char *teststr1, *teststr2, *teststr3;
 	pid_t child;
 
 	tty = _ttyprompt(); /* 0 if interactive or 1 if non-interactive */
