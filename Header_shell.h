@@ -22,4 +22,7 @@ char *_strcat(char *dest, char *src);
 char *catcmd(char **paths, char **tokens);
 char *_strcpy(char *dest, char *src);
 char *concat(char *str, char *str2);
+int _ttyprompt(void);
+
+
 #endif /* Header_shell_H */
