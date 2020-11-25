@@ -8,7 +8,7 @@ int main(void)
 	char **tokens;
 	char **paths;
 	size_t buffSize = 0;
-	int gl, i, status, tty;
+	int i, gl, status, tty;
 
 	pid_t child;
 
@@ -16,12 +16,15 @@ int main(void)
 	path = path_parser("PATH="); /* string of path keys with delimeters */
 	paths = tokenizer(path, ":"); /* returns array of char pointers */
 
+
 	gl = getline(&buffer, &buffSize, stdin);
 /*	if (gl == -1)
 	{	print_string("could not read line");
 	}
-*/	if (gl > 0)
+*/	while (gl > 0)
 	{
+		if (tty == 0)
+		{ printf("tty value: %d\n", tty);	}
 		tokens = tokenizer(buffer, " \n\r\f\v");
 
 		/*begin child process */
@@ -47,17 +50,18 @@ int main(void)
 			free(paths);
 			free(tokens);
 			free(buffer);
-
 			exit(EXIT_SUCCESS);
 		}
 		else
 		{	wait(&status);	}
 
-			free(paths);
+
 			free(tokens);	
-			free(buffer);
 
+		_ttyprompt();
+		gl = getline(&buffer, &buffSize, stdin);
 	}
-
+		free(buffer);
+		free(paths);
 	return (0);
 }
