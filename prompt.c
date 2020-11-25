@@ -33,13 +33,15 @@ int main(void)
 		{
 			for (i = 0; paths[i]; i++)
 			{
-
+				if (execve(tokens[0], tokens, environ) == -1)
+				{
 				cmd = concat(paths[i], tokens[0]);
 /*
 				printf("cmd: %s\n", cmd);
 				printf("cmd: %s\n", cmd);
 */
 				execve(cmd, tokens, environ);
+				}
 				free(cmd);
 			}
 
