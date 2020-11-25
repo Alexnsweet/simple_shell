@@ -8,11 +8,11 @@ int main(void)
 	char **tokens;
 	char **paths;
 	size_t buffSize = 0;
-	int i, gl, status, tty;
+	int i, gl, status;
 
 	pid_t child;
 
-	tty = _ttyprompt(); /* 0 if interactive or 1 if non-interactive */
+	_ttyprompt(); /* 0 if interactive or 1 if non-interactive */
 	path = path_parser("PATH="); /* string of path keys with delimeters */
 	paths = tokenizer(path, ":"); /* returns array of char pointers */
 
@@ -23,8 +23,6 @@ int main(void)
 	}
 */	while (gl > 0)
 	{
-		if (tty == 0)
-		{ printf("tty value: %d\n", tty);	}
 		tokens = tokenizer(buffer, " \n\r\f\v");
 
 		/*begin child process */
@@ -61,7 +59,6 @@ int main(void)
 		gl = getline(&buffer, &buffSize, stdin);
 	}
 
-		printf("Is visible");
 		free(buffer);
 		free(paths);
 	return (0);
