@@ -15,7 +15,7 @@ char *path_parser(char *envvar)
 
 	for (i = 0, j = 0; environ[i]; i++)
 	{
-		j = strncmp(environ[i], envvar, k);
+		j = _strncmp(environ[i], envvar, k);
 
 	/*	printf("I is [%d] J is [%d] K is [%d] \n", i, j, k); */
 
