@@ -38,8 +38,6 @@ int print_string(char *str)
  * Return: NULL if string is NULL or pointer to new string
  */
 
-
-/*
 char *_strdup(char *str)
 {
 	char *ptr;
@@ -64,8 +62,8 @@ char *_strdup(char *str)
 
 	return (ptr);
 }
-*/
 
+/*
 char *_strdup(char *str)
 {
 	char *ar;
@@ -85,7 +83,7 @@ char *_strdup(char *str)
 	ar[i] = '\0';
 	return (ar);
 }
-
+*/
 
 
 /**
