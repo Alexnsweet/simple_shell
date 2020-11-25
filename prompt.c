@@ -7,10 +7,11 @@ int main(int ac, char **av, char **env)
 	char **tokens;
 	char **paths;
 	size_t buffSize = 0;
-	int gl, i;
+	int gl, i, status;
 	(void) ac;
 	char *teststr1, *teststr2, *teststr3;
 	pid_t child;
+
 
 	if (isatty(STDIN_FILENO))
 	{	write (STDOUT_FILENO, "($) ", 4);	}
@@ -59,19 +60,35 @@ printf("%s\n", teststr3);
 			print_string("\n");
 		}
 
+/*begin child process */
 
+child = fork();
 
-
-for (i = 0; paths[i]; i++)
+if (child == 0)
 {
-	cmd = concat(paths[i], tokens[0]);
-	
-	printf("cmd: %s\n", cmd);
-	printf("cmd: %s\n", cmd);
+	for (i = 0; paths[i]; i++)
+	{
 
-	execve(cmd, tokens, environ);
+		cmd = concat(paths[i], tokens[0]);
 
-	free(cmd);
+		printf("cmd: %s\n", cmd);
+		printf("cmd: %s\n", cmd);
+
+		execve(cmd, tokens, environ);
+
+		free(cmd);
+	}
+
+		print_string("Command not found, buddy");
+
+		free(paths);
+		free(tokens);
+		free(buffer);
+		exit(EXIT_SUCCESS);
+}
+else
+{
+	wait(&status);
 }
 
 		free(paths);
