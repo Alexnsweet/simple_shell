@@ -13,3 +13,24 @@ int print_err(char *str)
 
 	return (i);
 }
+
+/**
+ * _ttyprompt - writes specified prompt and specifies if a tty or not
+ *
+ * Return: 1 if is a tty or 0 if not
+ */
+int _ttyprompt(void)
+{
+	int tty;
+
+	if (isatty(STDIN_FILENO))
+	{	write (STDOUT_FILENO, "($) ", 4);
+		tty = 1;
+	}
+	else if (isatty(STDIN_FILENO) != 1)
+	{	write (STDOUT_FILENO, "$ ", 2);
+		tty = 0;
+	}
+
+	return (tty);
+}
