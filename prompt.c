@@ -42,7 +42,6 @@ int main(void)
 				printf("cmd: %s\n", cmd);
 */
 				execve(cmd, tokens, environ);
-
 				free(cmd);
 			}
 
@@ -61,6 +60,8 @@ int main(void)
 		_ttyprompt();
 		gl = getline(&buffer, &buffSize, stdin);
 	}
+
+		printf("Is visible");
 		free(buffer);
 		free(paths);
 	return (0);
