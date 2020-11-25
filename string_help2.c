@@ -7,7 +7,7 @@
  *
  * Return: the difference in integer format
  */
-int _strncmp(char *s1, char *s2, size_t n)
+int _strncmp(char *s1, char *s2, ssize_t n)
 {
         int i = 0;
 
