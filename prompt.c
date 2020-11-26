@@ -35,7 +35,7 @@ int main(void)
 			free(paths);
 			free(tokens);
 			free(buffer);
-			_exit(0);
+			_exit(2);
 		}
 		else
 		{	wait(&status);	}
