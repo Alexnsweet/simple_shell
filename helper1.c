@@ -44,13 +44,15 @@ int _ttyprompt(void)
 int isbuiltin(char **paths, char **tokens, char *buffer)
 {
 
-	if (strcmp(tokens[0], "exit") == 0)
+	if (_strcmp(tokens[0], "exit") == 0)
 	{
 		free(paths);
 		free(tokens);
 		free(buffer);
 		_exit(0);
 	}
-
-	return (0);
+	else
+	{
+		return (0);
+	}
 }
