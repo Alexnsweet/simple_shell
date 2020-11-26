@@ -49,7 +49,7 @@ int isbuiltin(char **paths, char **tokens, char *buffer)
 		free(paths);
 		free(tokens);
 		free(buffer);
-		exit(0);
+		_exit(0);
 	}
 
 	return (0);
