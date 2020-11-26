@@ -51,4 +51,6 @@ int isbuiltin(char **paths, char **tokens, char *buffer)
 		free(buffer);
 		exit(0);
 	}
+
+	return (0);
 }
