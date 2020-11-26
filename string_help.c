@@ -125,21 +125,29 @@ char **tokenizer(char *str, char *delim)
 		{	delim_count++;	}
 	}
 
-	token_count = delim_count + 1;
+		token_count = delim_count + 1;
 
-	buffer = malloc(sizeof(char *) * (token_count + 1));
-
-	if (buffer == NULL)
-	{	return (NULL);	}
-
-	i = 0;
-	buffer[i] = strtok(str, delim);
-	i++;
-	while (i < token_count)
+	if (strcmp(delim, ":") != 0 && token_count == _strlen(str))
 	{
-		buffer[i] = strtok(NULL, delim);
+		printf("Number of delimiters: %d\n", token_count);
+		printf("Length of string: %d\n", _strlen(str));
+		return (NULL);
+	}
+
+		buffer = malloc(sizeof(char *) * (token_count + 1));
+
+		if (buffer == NULL)
+		{	return (NULL);	}
+
+		i = 0;
+		buffer[i] = strtok(str, delim);
 		i++;
-         }
-	buffer[i] = NULL;
-	return (buffer);
+		while (i < token_count)
+		{
+			buffer[i] = strtok(NULL, delim);
+			i++;
+         	}
+		buffer[i] = NULL;
+
+		return (buffer);
 }
