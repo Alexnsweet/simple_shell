@@ -15,8 +15,6 @@ int main(void)
 	while (gl > 0)
 	{
 		tokens = tokenizer(buffer, " \n\r\f\v");
-	if (tokens == NULL)
-	{	print_string("tokens is null bruv\n");	}
 	if (tokens != NULL)
 	{		
 		child = fork();
