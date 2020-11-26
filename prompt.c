@@ -15,6 +15,9 @@ int main(void)
 	while (gl > 0)
 	{
 		tokens = tokenizer(buffer, " \n\r\f\v");
+
+		isbuiltin(paths, tokens, buffer);
+
 	if (tokens != NULL)
 	{		
 		child = fork();

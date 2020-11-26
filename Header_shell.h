@@ -24,5 +24,5 @@ char *_strcpy(char *dest, char *src);
 char *concat(char *str, char *str2);
 int _ttyprompt(void);
 char *_strdup(char *str);
-
+int isbuiltin(char **paths, char **tokens, char *buffer);
 #endif /* Header_shell_H */

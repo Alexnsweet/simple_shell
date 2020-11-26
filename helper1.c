@@ -34,3 +34,22 @@ int _ttyprompt(void)
 
 	return (tty);
 }
+
+/**
+ * isbuiltin - checks line input to see if it's a builtin command
+ *
+ *
+ *
+ */
+int isbuiltin(char **paths, char **tokens, char *buffer)
+{
+	int i = 0;
+
+	if (strcmp(tokens[0], "exit") == 0)
+	{
+		free(paths);
+		free(tokens);
+		free(buffer);
+		exit(0);
+	}
+}
