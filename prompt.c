@@ -16,10 +16,9 @@ int main(void)
 	{
 		tokens = tokenizer(buffer, " \n\r\f\v");
 
-		isbuiltin(paths, tokens, buffer);
-
 	if (tokens != NULL)
-	{		
+	{	
+		isbuiltin(paths, tokens, buffer);
 		child = fork();
 		if (child == 0)
 		{
@@ -36,7 +35,7 @@ int main(void)
 			free(paths);
 			free(tokens);
 			free(buffer);
-			exit(EXIT_SUCCESS);
+			_exit(0);
 		}
 		else
 		{	wait(&status);	}
