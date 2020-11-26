@@ -127,7 +127,7 @@ char **tokenizer(char *str, char *delim)
 
 		token_count = delim_count + 1;
 
-	if (strcmp(delim, ":") != 0 && token_count == _strlen(str))
+	if (token_count == _strlen(str))
 	{
 		printf("Number of delimiters: %d\n", token_count);
 		printf("Length of string: %d\n", _strlen(str));
