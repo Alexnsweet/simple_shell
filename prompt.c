@@ -15,6 +15,10 @@ int main(void)
 	while (gl > 0)
 	{
 		tokens = tokenizer(buffer, " \n\r\f\v");
+	if (tokens == NULL)
+	{	print_string("tokens is null bruv\n");	}
+	if (tokens != NULL)
+	{		
 		child = fork();
 		if (child == 0)
 		{
@@ -36,6 +40,7 @@ int main(void)
 		else
 		{	wait(&status);	}
 			free(tokens);	
+	}
 		if (tty == 1)
 		{	tty = _ttyprompt();	}
 		gl = getline(&buffer, &buffSize, stdin);
