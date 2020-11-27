@@ -37,9 +37,12 @@ int _ttyprompt(void)
 
 /**
  * isbuiltin - checks line input to see if it's a builtin command
+ * @paths: array of char pointers to tokenized path values
+ * @tokens: tokenized line arguments
+ * @buffer: line argument
+ * @path: path to free
  *
- *
- *
+ * Return: 0 if not a builtin or 2 if builtin
  */
 int isbuiltin(char **paths, char **tokens, char *buffer, char *path)
 {
