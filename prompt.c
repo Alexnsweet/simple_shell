@@ -5,7 +5,7 @@ int main(void)
 	char *buffer = NULL, *path = NULL, *cmd = NULL;
 	char **tokens, **paths;
 	size_t buffSize = 0;
-	int i, gl, status, tty;
+	int i, gl, status, tty, builtstat;
 	pid_t child;
 
 	tty = _ttyprompt(); /* 0 if interactive or 1 if non-interactive */
@@ -18,7 +18,10 @@ int main(void)
 
 	if (tokens != NULL)
 	{	
-		isbuiltin(paths, tokens, buffer, path);
+		builtstat = isbuiltin(paths, tokens, buffer, path);
+		
+	if (builtstat != 2)
+	{
 		child = fork();
 		if (child == 0)
 		{
@@ -40,7 +43,10 @@ int main(void)
 		}
 		else
 		{	wait(&status);	}
-			free(tokens);	
+
+	}
+		free(tokens);	
+
 	}
 		if (tty == 1)
 		{	tty = _ttyprompt();	}
