@@ -20,7 +20,7 @@ char *path_parser(char *envvar)
 	/*	printf("I is [%d] J is [%d] K is [%d] \n", i, j, k); */
 
 		if (j == 0)
-		{	ptr = strdup(&environ[i][k]); /* return string after =  */
+		{	ptr = _strdup(&environ[i][k]); /* return string after =  */
 			return (ptr);
 		}
 	}
