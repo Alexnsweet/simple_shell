@@ -6,25 +6,21 @@
  */
 int main(void)
 {
-	char *buffer = NULL, *path = NULL, *cmd = NULL;
-	char **tokens, **paths;
-	size_t buffSize = 0;
-	int i, gl, status, tty, builtstat;
-	pid_t child;
+char *buffer = NULL, *path = NULL, *cmd = NULL, **tokens, **paths;
+size_t buffSize = 0;
+int i, gl, status, tty;
+pid_t child;
 
-	tty = _ttyprompt(); /* 0 if interactive or 1 if non-interactive */
-	path = path_parser("PATH="); /* string of path keys with delimeters */
-	paths = tokenizer(path, ":"); /* returns array of char pointers */
-	gl = getline(&buffer, &buffSize, stdin);
-	while (gl > 0)
-	{
+tty = _ttyprompt(); /* 0 if interactive or 1 if non-interactive */
+path = path_parser("PATH="); /* string of path keys with delimeters */
+paths = tokenizer(path, ":"); /* returns array of char pointers */
+gl = getline(&buffer, &buffSize, stdin);
+while (gl > 0)
+{
 		tokens = tokenizer(buffer, " \n\r\f\v");
-
-	if (tokens != NULL)
-	{	
-		builtstat = isbuiltin(paths, tokens, buffer, path);
-		
-	if (builtstat != 2)
+if (tokens != NULL)
+{	
+	if (isbuiltin(paths, tokens, buffer, path) != 2)
 	{
 		child = fork();
 		if (child == 0)
@@ -47,15 +43,13 @@ int main(void)
 		}
 		else
 		{	wait(&status);	}
-
 	}
-		free(tokens);	
-
-	}
+		free(tokens);
+}
 		if (tty == 1)
 		{	tty = _ttyprompt();	}
 		gl = getline(&buffer, &buffSize, stdin);
-	}
+}
 		free(buffer);
 		free(paths);
 		free(path);
