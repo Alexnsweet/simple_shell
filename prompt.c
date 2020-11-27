@@ -33,6 +33,7 @@ int main(void)
 			}
 			print_string("Command not found, buddy. Try again\n");
 			free(paths);
+			free(path);
 			free(tokens);
 			free(buffer);
 			_exit(0);
@@ -47,5 +48,6 @@ int main(void)
 	}
 		free(buffer);
 		free(paths);
+		free(path);
 	return (0);
 }
