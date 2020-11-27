@@ -26,4 +26,4 @@ char *path_parser(char *envvar)
 	}
 	print_string("could not find variable");
 	return (ptr);
-}	
+}
