@@ -46,7 +46,8 @@ char *_strdup(char *str)
 	if (str == NULL)
 	{	return (NULL);	}
 	else
-	{	for (len = 0; *(str + len) != '\0'; len++)
+	{	
+		for (len = 0; *(str + len) != '\0'; len++)
 		;
 	}
 
@@ -62,29 +63,6 @@ char *_strdup(char *str)
 
 	return (ptr);
 }
-
-/*
-char *_strdup(char *str)
-{
-	char *ar;
-	unsigned int i, size;
-
-	if (str == NULL)
-		return (NULL);
-	for (size = 0; *(str + size) != '\0'; size++)
-		;
-	ar = (char *) malloc((size + 1) * sizeof(char));
-	if (ar == NULL)
-		return (NULL);
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		ar[i] = str[i];
-	}
-	ar[i] = '\0';
-	return (ar);
-}
-*/
-
 
 /**
  * _strcmp - compares two strings
