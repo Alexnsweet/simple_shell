@@ -8,7 +8,7 @@ int main(void)
 {
 char *buffer = NULL, *path = NULL, **tokens, **paths;
 size_t buffSize = 0;
-int i, gl, status, tty;
+int gl, tty;
 
 
 tty = _ttyprompt(); /* 0 if interactive or 1 if non-interactive */
