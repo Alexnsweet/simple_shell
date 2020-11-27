@@ -18,7 +18,7 @@ int main(void)
 
 	if (tokens != NULL)
 	{	
-		isbuiltin(paths, tokens, buffer);
+		isbuiltin(paths, tokens, buffer, path);
 		child = fork();
 		if (child == 0)
 		{
