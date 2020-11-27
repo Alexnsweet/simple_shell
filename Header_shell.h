@@ -26,4 +26,5 @@ int _ttyprompt(void);
 char *_strdup(char *str);
 int isbuiltin(char **paths, char **tokens, char *buffer, char *path);
 int _strcmp(char *s1, char *s2);
+void _exec(char **paths, char **tokens, char *path, char *buffer);
 #endif /* Header_shell_H */
