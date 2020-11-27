@@ -6,10 +6,10 @@
  */
 int main(void)
 {
-char *buffer = NULL, *path = NULL, *cmd = NULL, **tokens, **paths;
+char *buffer = NULL, *path = NULL, **tokens, **paths;
 size_t buffSize = 0;
 int i, gl, status, tty;
-pid_t child;
+
 
 tty = _ttyprompt(); /* 0 if interactive or 1 if non-interactive */
 path = path_parser("PATH="); /* string of path keys with delimeters */
@@ -17,12 +17,15 @@ paths = tokenizer(path, ":"); /* returns array of char pointers */
 gl = getline(&buffer, &buffSize, stdin);
 while (gl > 0)
 {
-		tokens = tokenizer(buffer, " \n\r\f\v");
+tokens = tokenizer(buffer, " \n\r\f\v");
 if (tokens != NULL)
 {	
 	if (isbuiltin(paths, tokens, buffer, path) != 2)
 	{
-		child = fork();
+
+
+	_exec(paths, tokens, path, buffer);
+	/*	child = fork();
 		if (child == 0)
 		{
 			for (i = 0; paths[i]; i++)
@@ -43,7 +46,7 @@ if (tokens != NULL)
 		}
 		else
 		{	wait(&status);	}
-	}
+*/	}
 		free(tokens);
 }
 		if (tty == 1)
