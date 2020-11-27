@@ -12,7 +12,7 @@ char *path_parser(char *envvar)
 	char *ptr = NULL;
 
 	k = _strlen(envvar);
-	
+
 	for (i = 0, j = 0; environ[i]; i++)
 	{
 		j = _strncmp(environ[i], envvar, k);
@@ -27,4 +27,3 @@ char *path_parser(char *envvar)
 	print_string("could not find variable");
 	return (ptr);
 }	
-	
