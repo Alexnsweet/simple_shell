@@ -43,6 +43,7 @@ int _ttyprompt(void)
  */
 int isbuiltin(char **paths, char **tokens, char *buffer)
 {
+	int i;
 
 	if (_strcmp(tokens[0], "exit") == 0)
 	{
@@ -51,12 +52,15 @@ int isbuiltin(char **paths, char **tokens, char *buffer)
 		free(buffer);
 		_exit(0);
 	}
-/*	else if (_strcmp(tokens[0], "env") == 0)
+	else if (_strcmp(tokens[0], "env") == 0)
 	{
-		
+		for (i = 0; environ[i]; i++)
+		{
+			print_string(environ[i]);
+			print_string("\n");
+		}
+		return (2);
 	}
-*/	else
-	{
+
 		return (0);
-	}
 }
