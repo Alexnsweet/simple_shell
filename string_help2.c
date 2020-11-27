@@ -9,14 +9,14 @@
  */
 int _strncmp(char *s1, char *s2, ssize_t n)
 {
-        while (*s1 == *s2 && n--)
-        {
+	while (*s1 == *s2 && n--)
+	{
 		s1++;
 		s2++;
-        }
+	}
 	if (n)
 	{	return (*s1 - *s2);	}
-        return (0);
+	return (0);
 }
 
 /**
