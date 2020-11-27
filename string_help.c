@@ -46,7 +46,7 @@ char *_strdup(char *str)
 	if (str == NULL)
 	{	return (NULL);	}
 	else
-	{	
+	{
 		for (len = 0; *(str + len) != '\0'; len++)
 		;
 	}
@@ -99,7 +99,8 @@ char **tokenizer(char *str, char *delim)
 	int delim_count = 0, i, token_count;
 
 	for (i = 0; str[i] != '\0'; i++)
-	{	if (str[i] == *delim)
+	{
+		if (str[i] == *delim)
 		{	delim_count++;	}
 	}
 
@@ -122,7 +123,7 @@ char **tokenizer(char *str, char *delim)
 		{
 			buffer[i] = strtok(NULL, delim);
 			i++;
-         	}
+		}
 		buffer[i] = NULL;
 
 		return (buffer);
