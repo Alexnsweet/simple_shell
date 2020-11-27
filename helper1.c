@@ -54,8 +54,10 @@ int isbuiltin(char **paths, char **tokens, char *buffer)
 	}
 	else if (_strcmp(tokens[0], "env") == 0)
 	{
-		for (i = 0; environ[i]; i++)
+		for (i = 0; environ[i] != NULL; i++)
 		{
+		
+			if (environ[]
 			print_string(environ[i]);
 			print_string("\n");
 		}
