@@ -41,13 +41,14 @@ int _ttyprompt(void)
  *
  *
  */
-int isbuiltin(char **paths, char **tokens, char *buffer)
+int isbuiltin(char **paths, char **tokens, char *buffer, char *path)
 {
 	int i;
 
 	if (_strcmp(tokens[0], "exit") == 0)
 	{
 		free(paths);
+		free(path);
 		free(tokens);
 		free(buffer);
 		_exit(0);
