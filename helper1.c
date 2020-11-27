@@ -57,7 +57,6 @@ int isbuiltin(char **paths, char **tokens, char *buffer)
 		for (i = 0; environ[i] != NULL; i++)
 		{
 		
-			if (environ[]
 			print_string(environ[i]);
 			print_string("\n");
 		}
