@@ -12,6 +12,7 @@ void _exec(char **paths, char **tokens, char *path, char *buffer)
 	char *cmd = NULL;
 	pid_t child;
 	int i, status;
+
 	child = fork();
 	if (child == 0)
 	{
