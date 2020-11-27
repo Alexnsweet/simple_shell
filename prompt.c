@@ -1,5 +1,9 @@
 #include "Header_shell.h"
-
+/**
+ * main - runs simple shell
+ *
+ * Return: 0 on success
+ */
 int main(void)
 {
 	char *buffer = NULL, *path = NULL, *cmd = NULL;
