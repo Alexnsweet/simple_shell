@@ -47,7 +47,7 @@ char *_strcat(char *dest, char *src)
 
 /**
  * concat - mallocs space for command string and concatenates strings
- * @str1: string
+ * @str: string
  * @str2: string to append to str1
  *
  * Return: string pointer to malloc'd concatenated string
