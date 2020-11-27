@@ -51,7 +51,7 @@ int isbuiltin(char **paths, char **tokens, char *buffer, char *path)
 		free(path);
 		free(tokens);
 		free(buffer);
-		_exit(0);
+		_exit();
 	}
 	else if (_strcmp(tokens[0], "env") == 0)
 	{
