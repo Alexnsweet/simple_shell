@@ -24,7 +24,7 @@ int _ttyprompt(void)
 	int tty;
 
 	if (isatty(STDIN_FILENO))
-	{	write (STDOUT_FILENO, "($) ", 4);
+	{	write(STDOUT_FILENO, "($) ", 4);
 		tty = 1;
 	}
 	else if (isatty(STDIN_FILENO) != 1)
@@ -60,7 +60,7 @@ int isbuiltin(char **paths, char **tokens, char *buffer, char *path)
 	{
 		for (i = 0; environ[i] != NULL; i++)
 		{
-		
+
 			print_string(environ[i]);
 			print_string("\n");
 		}
